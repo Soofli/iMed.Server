@@ -1,0 +1,124 @@
+﻿@page "/callBackPayment"
+@model iMed.Server.Pages.CallbackPaymentPageModel
+@attribute [AllowAnonymous]
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="//fdn.fontcdn.ir">
+    <link rel="preconnect" href="//v1.fontapi.ir">
+    <link href="https://v1.fontapi.ir/css/Shabnam" rel="stylesheet">
+    <title> نتیجه پرداخت</title>
+</head>
+<style>
+    body {
+        background-color: #577590;
+        font-family: 'Shabnam', sans-serif;
+        direction: rtl;
+    }
+
+    .container {
+        width: 300px;
+        height: auto;
+        padding: 50px 30px;
+        background-color: whitesmoke;
+        border-radius: 20px;
+        margin: auto;
+    }
+
+
+    .mg-top {
+        margin-top: 100px;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-success {
+        color: #24c043
+    }
+
+    .check {
+        position: relative;
+        top: 0;
+        right: 0;
+        font-size: 50px;
+    }
+
+    .backSuccess {
+        background-color: #1fa83b;
+        color: white;
+        border: 0;
+        border-radius: 10px;
+        padding: 10px 20px;
+        font-size: 15px;
+        font-weight: lighter;
+        font-family: 'Shabnam', sans-serif;
+    }
+
+    .text-danger {
+        color: rgb(185, 30, 30)
+    }
+
+    .backDanger {
+        background-color: rgb(185, 30, 30);
+        color: white;
+        border: 0;
+        border-radius: 10px;
+        padding: 10px 20px;
+        font-size: 15px;
+        font-weight: lighter;
+        font-family: 'Shabnam', sans-serif;
+    }
+</style>
+
+
+<body>
+@if (Model.Successful)
+{
+    
+    <div class="container mg-top text-center" id="success">
+
+        <span class="check">✔️</span>
+        <h1 class="text-success">پرداخت موفق </h1>
+        <p>
+            حساب کاربری شما شارژ شد
+        </p>
+        <a href="intent:#Intent;action=schemas.com.vnf.imed.SplashActivity;end" id="backBtn">
+            <button class="backSuccess">
+                بازگشت به اپلیکیشن
+            </button>
+        </a>
+    </div>
+}
+else
+{
+    
+    <div class="container mg-top text-center" id="unsuccess">
+
+        <span class="check">❌</span>
+        <h1 class="text-danger">پرداخت ناموفق </h1>
+        <p>
+            پرداخت شما با خطا مواجه شد
+        </p>
+        <a href="intent:#Intent;action=schemas.com.vnf.imed.SplashActivity;end" id="backDanger">
+            <button class="backDanger">
+                بازگشت به اپلیکیشن
+            </button>
+        </a>
+
+    </div>
+}
+
+
+
+</body>
+
+</html>
+
+@{
+    
+}

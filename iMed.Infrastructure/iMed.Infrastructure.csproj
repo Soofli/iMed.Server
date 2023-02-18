@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Refit" Version="6.3.2" />
+	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iMed.Core\iMed.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="RestServices\" />
+  </ItemGroup>
+
+</Project>
